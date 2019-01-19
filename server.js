@@ -11,6 +11,7 @@ app.use('/css', express.static("public/css"));
 //Routes
 app.get('/', (req, res, next) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+   
   });
   app.get('/chat', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'chat.html'));
@@ -40,3 +41,25 @@ database.insert({nickname,message},(error)=>{
     }
 })
 }
+//Websocket operations
+wsServer.on('connection', ws => {
+
+    ws.on('message', msg => {
+      let m = JSON.parse(msg);
+  
+      let data = {
+        nickname: m.nickname,
+        content: m.content
+      };
+      wsServer.clients.forEach(function each(client) {
+        client.send(JSON.stringify(data));
+      })
+  
+    })
+    let messages = getAllMessages();
+   
+    ws.send(JSON.stringify(messages));
+  })
+
+//Running server
+app.listen(port,()=>console.log(`Server is running on port ${port}`));
