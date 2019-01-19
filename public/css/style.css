@@ -1,0 +1,20 @@
+body{
+    background: #7675FF;
+    width: 100%;  
+}
+
+.form{
+    margin:20% 40%;
+    
+    
+}
+.form button{
+    width:150%;
+    background: #7AA4FF;
+    border-radius: 5px;
+    padding: 5%;
+}
+.form input{
+    width: 150%;
+}
+
