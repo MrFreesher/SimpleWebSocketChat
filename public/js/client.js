@@ -40,7 +40,7 @@ function sendMessage() {
 
   connection.send(JSON.stringify({
     nickname: getUserNameFromCookie(),
-    content: msgInput.value
+    message: msgInput.value
   }));
 
 }
