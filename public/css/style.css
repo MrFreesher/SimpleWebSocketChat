@@ -9,12 +9,12 @@ body{
     
 }
 .form button{
-    width:150%;
+    width:200px;
     background: #7AA4FF;
     border-radius: 5px;
     padding: 5%;
 }
 .form input{
-    width: 150%;
+    width: 196px;
 }
 
