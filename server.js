@@ -49,8 +49,9 @@ wsServer.on('connection', ws => {
   
       let data = {
         nickname: m.nickname,
-        content: m.content
+        message: m.message
       };
+      addMessage(...data);
       wsServer.clients.forEach(function each(client) {
         client.send(JSON.stringify(data));
       })
