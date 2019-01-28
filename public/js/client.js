@@ -1,6 +1,6 @@
 const url = 'ws://localhost:8080/';
 const connection = new WebSocket(url)
-const btn = document.querySelector("#sendBtn");
+const sendBtn = document.querySelector("#sendBtn");
 const msgList = document.querySelector("#message-list");
 const msgInput = document.querySelector("#message-input");
 function appendToList(msg) {
