@@ -26,13 +26,9 @@ database.loadDatabase((err)=>{
 });
 
 function getAllMessages(){
-    database.find({}).exec((error,messages)=>{
-        if(error != undefined){
-            console.log(error);
-        }else{
-            return messages;
-        }
-    })
+    let messages  = database.getAllData();
+    return messages;
+    
 }
 function addMessage(nickname,message){
 database.insert({nickname,message},(error)=>{
@@ -51,9 +47,9 @@ wsServer.on('connection', ws => {
         nickname: m.nickname,
         message: m.message
       };
-      addMessage(...data);
+      addMessage(m.nickname,m.message);
       wsServer.clients.forEach(function each(client) {
-        client.send(JSON.stringify(data));
+        client.send(JSON.stringify([data]));
       })
   
     })
