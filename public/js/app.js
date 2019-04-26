@@ -1,23 +1,24 @@
 const loginBtn = document.querySelector('#loginBtn')
 const usernameField = document.querySelector('#usernameField')
 const form = document.querySelector('.form')
-form.addEventListener('click', e => {
-	e.preventDefault()
-})
+
 function checkLoginExist() {
-	console.log(localStorage.getItem('username'))
 	if (localStorage.getItem('username') !== null) {
 		window.location = '/chat'
 	}
 }
 document.addEventListener('DOMContentLoaded', checkLoginExist)
-loginBtn.addEventListener('click', login)
+loginBtn.addEventListener('click', e => {
+	e.preventDefault()
+	login()
+})
 
 function login() {
 	if (usernameField.value !== '') {
 		localStorage.setItem('username', usernameField.value)
+		window.location = '/chat'
 	} else {
-		usernameField.classList.add('error_border')
-		console.log('Pole nie może być puste ')
+		usernameField.classList.add('errorBorder')
+		document.querySelector('#errorText').style.visibility = 'visible'
 	}
 }

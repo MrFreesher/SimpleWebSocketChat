@@ -2,6 +2,7 @@
 * {
 	padding: 0;
 	margin: 0;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 body {
@@ -10,42 +11,82 @@ body {
 	font-family: sans-serif;
 }
 /* Login page style */
+.container {
+	height: 100vh;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
 .form {
 	height: 10vh;
-	margin: 20% 40%;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
 }
-#error_text {
-	color: #ff0000;
-	display: none;
+#errorText {
+	color: #f08ea2;
+	visibility: hidden;
+	font-size: 1rem;
 }
 
-.error_border {
+.errorBorder {
 	border: 2px solid #ff0000;
 	border-radius: 5px;
 }
-.form button {
+#loginBtn {
 	background: #7aa4ff;
 	border-radius: 5px;
 	padding: 5%;
 	margin-left: 0;
 	border: none;
+	cursor: pointer;
+	width: 10%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .usernameField {
 	height: 100%;
 	padding: 5%;
 	margin-right: 0;
 	border: none;
+	cursor: text;
 }
 #usernameFieldLabel {
-	font-size: 1.6rem;
+	font-size: 1.4rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 .textWrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
 	flex: 1;
+	justify-content: center;
 }
+
+@media screen and (min-width: 768px) {
+	#errorText {
+		font-size: 1.2rem;
+	}
+}
+
 /* Chat style*/
 .input-field {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
 	flex-direction: row;
 	padding: 1%;
 	width: 100%;
@@ -54,6 +95,8 @@ body {
 	left: 0;
 	bottom: 0;
 	background: #7aa4ff;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
 	justify-content: flex-start;
 }
 .message-list {
