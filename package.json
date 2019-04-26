@@ -1,22 +1,22 @@
 {
-  "name": "simplewebsocketchat",
-  "version": "1.0.0",
-  "description": "This is a very simple chat with the use of web sockets.",
-  "main": "server.js",
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  },
-  "author": "MrFreesher",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4",
-    "nedb": "^1.8.0",
-    "ws": "^6.1.2"
-  },
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "nodemon": "^1.18.9",
-    "prettier": "^1.17.0"
-  }
+	"name": "simplewebsocketchat",
+	"version": "1.0.0",
+	"description": "This is a very simple chat with the use of web sockets.",
+	"main": "server.js",
+	"scripts": {
+		"dev": "nodemon server.js",
+		"start": "node server.js"
+	},
+	"author": "MrFreesher",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.16.4",
+		"nedb": "^1.8.0",
+		"ws": "^6.1.2"
+	},
+	"devDependencies": {
+		"eslint": "^5.16.0",
+		"nodemon": "^1.18.9",
+		"prettier": "^1.17.0"
+	}
 }
