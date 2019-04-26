@@ -1,4 +1,3 @@
-const messageModel = require('./public/js/models/message')
 const nedb = require('nedb')
 class Database {
 	constructor(filename) {
@@ -20,11 +19,10 @@ class Database {
 			throw new Error('Cannot fetch data from database')
 		}
 	}
-	addMessage(nickname, message) {
-		if (message === '' && nickname === '') {
+	addMessage(newMessage) {
+		if (newMessage.message === '' && newMessage.nickname === '') {
 			throw new Error('Fields cannot be empty')
 		} else {
-			let newMessage = new messageModel(nickname, message)
 			try {
 				this.db.insert(JSON.stringify(newMessage))
 			} catch (err) {
