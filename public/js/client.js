@@ -23,22 +23,26 @@ connection.onmessage = e => {
 		let msg = messageList[i]
 
 		appendToList(msg.nickname + ' powiedział : ' + msg.message)
+		if (msg.nickname === getUsernameFromLocalStorage()) {
+			window.scrollTo(0, document.body.scrollHeight)
+		}
 	}
 }
 function logout() {
 	localStorage.removeItem('username')
 	window.location = '/'
 }
-function getUserNameFromCookie() {
+function getUsernameFromLocalStorage() {
 	return localStorage.getItem('username')
 }
 function sendMessage() {
 	connection.send(
 		JSON.stringify({
-			nickname: getUserNameFromCookie(),
+			nickname: getUsernameFromLocalStorage(),
 			message: msgInput.value
 		})
 	)
+	msgInput.value = ''
 }
 sendBtn.addEventListener('click', sendMessage)
 document.querySelector('#logoutBtn').addEventListener('click', logout)

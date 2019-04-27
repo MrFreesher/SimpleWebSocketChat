@@ -104,29 +104,39 @@ body {
 }
 .message-list {
 	overflow: auto;
-	margin-bottom: 100px;
+	margin-bottom: 10vh;
 }
 .message {
 	margin-top: 10px;
-	width: 30%;
+	width: 100%;
 	padding: 10px;
 	color: black;
 	background: rgb(100, 109, 218);
 	border-radius: 10px;
 	display: block;
 }
-.message:nth-child(odd) {
-	margin-left: auto;
-	margin-right: 40px;
-}
-.message:nth-child(even) {
-	margin-left: 40px;
-	margin-right: auto;
-}
+
 #message-input {
 	width: 50%;
 }
 .button {
 	border: none;
 	background: none;
+}
+.logoutBtn {
+	position: absolute;
+	right: 0;
+}
+@media screen and (min-width: 768px) {
+	.message {
+		width: 30%;
+	}
+	.message:nth-child(odd) {
+		margin-left: auto;
+		margin-right: 40px;
+	}
+	.message:nth-child(even) {
+		margin-left: 40px;
+		margin-right: auto;
+	}
 }
